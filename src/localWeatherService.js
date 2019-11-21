@@ -7,7 +7,6 @@ export class LocalWeatherService {
         }
       })
       let jsonifiedResponse = await response.json();
-      getLocalWeather(jsonifiedResponse);
       return jsonifiedResponse;
     } catch(error) {
       console.error("There was an error handling your request: " + error.message);

@@ -9,25 +9,28 @@ import {MarsWeatherService} from './weatherService.js';
 $(document).ready(function() {
   let mars = new MarsData();
 
-  const getElements = (response) => {
-    const solkeys = response.sol_keys;
-  };
+
 
   (async () => {
     let marsWeather = new MarsWeatherService();
-    const response = await MarsweatherService.getWeatherByCity();
-    getElements(response);
+    const response = await marsWeather.getWeatherByCity();
+    getMars(response);
   })();
 
   (async () => {
     let localweatherService = new LocalWeatherService();
-    const response = await LocalweatherService.getLocalWeather();
-    getElements(response);
+    const response = await localweatherService.getLocalWeather();
+    getEarth(response);
   })();
 
+  const getMars = (response) => {
+    const solkeys = response.sol_keys;
+    $("#marsResults").text(`This is the Mars temperature:  ${response[solkeys[0]].AT.av}˚F`);
+  };
 
-  $("#marsResults").text(`This is the Mars temperature:  ${response[solkeys[0]].AT.av}˚F`);
-  const getWeatherElements = (response) => {
+  const getEarth = (response) => {
     $("#weatherResults").text(`This is the Earth temperature:  ${response.hours[0].airTemperature[0].value}˚F`);
   };
+
+
 });
