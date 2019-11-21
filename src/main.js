@@ -16,7 +16,7 @@ $(document).ready(function() {
   (async () => {
     let response = await fetch (`https://api.stormglass.io/v1/weather/point?lat=15&lng=27`,{
       headers: {
-        'Authorization': process.env.stormKey;
+        'Authorization': process.env.stormKey
       }
     })
     let jsonifiedResponse = await response.json();
@@ -25,10 +25,12 @@ $(document).ready(function() {
 
   const getElements = (response) => {
     const solkeys = response.sol_keys
+
     $("#marsResults").text(`This is the Mars temp ${response[solkeys[0]].AT.av}`);
   };
   const getWeatherElements = (response) => {
-    $("#weatherResults").text(`This is the Earth Date ${response.hours[0][0]}`);
+    console.log(response);
+    $("#weatherResults").text(`This is the Earth Date ${response}`);
   }
 });
 
