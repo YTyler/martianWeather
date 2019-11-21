@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import {LocalWeatherService} from './LocalWeatherService.js';
-import {MarsWeatherService} from './weatherService.js';
+import {MarsWeatherService} from './marsWeatherService.js';
 
 $(document).ready(function() {
 
