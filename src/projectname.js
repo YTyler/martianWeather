@@ -4,12 +4,3 @@ export class MarsData{
     this.temperature = temp;
   }
 }
-
-
-//Mars Api Call
-
-//Earth Api Call
-
-//acquire input date (for earth or mars?)
-
-//equate dates
