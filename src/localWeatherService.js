@@ -1,7 +1,7 @@
 export class LocalWeatherService {
   async getLocalWeather() {
     try {
-      let response = await fetch (`https://api.stormglass.io/v1/weather/point?lat=45&lng=-122`,{
+      let response = await fetch (`https://api.stormglass.io/v1/weather/point?lat=33&lng=-118`,{
         headers: {
           'Authorization': process.env.stormKey
         }
