@@ -1,0 +1,19 @@
+.data {
+  display: flex;
+  border: 2px solid black;
+}
+
+#mars {
+  float: left;
+  margin: 10px;
+}
+
+#earth {
+  float: left;
+  margin: 10px;
+}
+
+#comparison {
+  float: left;
+  margin: 10px;
+}
