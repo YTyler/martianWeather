@@ -26,11 +26,11 @@ $(document).ready(function() {
   const getElements = (response) => {
     const solkeys = response.sol_keys
 
-    $("#marsResults").text(`This is the Mars temp ${response[solkeys[0]].AT.av}`);
+    $("#marsResults").text(`This is the Mars temperature:  ${response[solkeys[0]].AT.av}˚F`);
   };
   const getWeatherElements = (response) => {
     console.log(response);
-    $("#weatherResults").text(`This is the Earth Date ${response}`);
+    $("#weatherResults").text(`This is the Earth temperature:  ${response.hours[0].airTemperature[0].value}˚F`);
   }
 });
 
