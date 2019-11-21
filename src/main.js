@@ -2,13 +2,10 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import {MarsData} from './projectname.js';
 import {LocalWeatherService} from './LocalWeatherService.js';
 import {MarsWeatherService} from './weatherService.js';
 
 $(document).ready(function() {
-  let mars = new MarsData();
-
 
 
   (async () => {
@@ -30,7 +27,6 @@ $(document).ready(function() {
 
   const getEarth = (response) => {
     $("#weatherResults").text(`This is the Earth temperature:  ${response.hours[0].airTemperature[0].value}˚F`);
+    console.log(response);
   };
-
-
 });
